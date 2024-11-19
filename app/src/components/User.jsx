@@ -11,7 +11,7 @@ function User({ userId, users, selectedGrouping }) {
       return char.charCodeAt(0) + acc;
     }, 0);
 
-    const colors = ['#ff9bcd', '#ffb732', '#00BFFF', '#32CD32', '#800080']; // Add more colors as needed
+    const colors = ['#ff9bcd', '#ffb732', '#00BFFF', '#32CD32', '#800080'];
     const colorIndex = hashCode % colors.length;
     return colors[colorIndex];
   };
