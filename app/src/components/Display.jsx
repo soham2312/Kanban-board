@@ -6,7 +6,7 @@ import no_priority from '../assets/no_priority.svg';
 import low from '../assets/low.svg';
 import medium from '../assets/medium.svg';
 import high from '../assets/high.svg';
-import urgent from '../assets/SVG - Urgent Priority colour.svg';
+import urgent from '../assets/urgent_priority.svg';
 import void_circle from '../assets/To-do.svg';
 import dashed_circle from '../assets/Backlog.svg';
 import in_progress from '../assets/in-progress.svg';
@@ -52,19 +52,19 @@ function Display({ title, tickets, users, selectedGrouping }) {
             selectedGrouping === 'priority' ? (
               <>
                 <img src={priorityIcon[title]} alt="Priority" style={{ marginRight: "10px" }} />
-                <span style={{fontSize:"15px"}}>{getPriorityTag(Number(title))}</span>
+                <span style={{ fontSize: "15px" }}>{getPriorityTag(Number(title))}</span>
               </>
             ) : (
               <>
                 <img src={statusIcon[title]} alt="Status" style={{ margin: "0px" }} />
-                <span style={{marginLeft:"8px", marginRight:"8px"}}>{title}</span>
+                <span style={{ marginLeft: "8px", marginRight: "8px" }}>{title}</span>
 
               </>
             )
           )}
 
           {title === 'user' && <span style={{ fontSize: "1em", marginLeft: "10px", marginRight: "10px" }}>{title}</span>}
-          <span style={{ marginLeft: "4px", marginRight: "20px", position: "relative", fontSize:"15px"}}>{tickets.length}</span>
+          <span style={{ marginLeft: "4px", marginRight: "20px", position: "relative", fontSize: "15px" }}>{tickets.length}</span>
         </div>
 
         <div style={{ justifyContent: "space-between", marginRight: "5px" }}>
