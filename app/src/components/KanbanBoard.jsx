@@ -20,27 +20,31 @@ function Dashboard({ users, tickets, selectedGrouping, selectedOrdering }) {
           : selectedGrouping === 'priority'
             ? ticket.priority
             : ticket.status;
-
+      if (selectedGrouping === 'status') {
+        if (!groupedTickets['Backlog'])
+          groupedTickets['Backlog'] = [];
+        if (!groupedTickets['Todo'])
+          groupedTickets['Todo'] = [];
+        if (!groupedTickets['In progress'])
+          groupedTickets['In progress'] = [];
+        if (!groupedTickets['Done'])
+          groupedTickets['Done'] = [];
+        if (!groupedTickets['Canceled'])
+          groupedTickets['Canceled'] = [];
+      }
       groupedTickets[groupKey] = groupedTickets[groupKey] || [];
       groupedTickets[groupKey].push(ticket);
+
     });
 
     Object.keys(groupedTickets).forEach((key) => {
       groupedTickets[key].sort(sortTickets);
     });
-    if(!groupedTickets['In progress']) 
-      groupedTickets['In progress']=[];
-    if(!groupedTickets['Done']) 
-      groupedTickets['Done']=[];
-    if(!groupedTickets['Backlog']) 
-      groupedTickets['Backlog']=[];
-    if(!groupedTickets['Todo']) 
-      groupedTickets['Todo']=[];
-    if(!groupedTickets['Canceled']) 
-      groupedTickets['Canceled']=[];
 
 
+    console.log(groupedTickets)
     return groupedTickets;
+
   }, [tickets, selectedGrouping, selectedOrdering]);
 
   return (

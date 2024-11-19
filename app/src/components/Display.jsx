@@ -52,7 +52,7 @@ function Display({ title, tickets, users, selectedGrouping }) {
             selectedGrouping === 'priority' ? (
               <>
                 <img src={priorityIcon[title]} alt="Priority" style={{ marginRight: "10px" }} />
-                <span style={{ fontSize: "15px" }}>{getPriorityTag(Number(title))}</span>
+                <span style={{ fontSize: "15px" }}>{getPriorityTag(Number(title))}11</span>
               </>
             ) : (
               <>
